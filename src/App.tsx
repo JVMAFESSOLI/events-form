@@ -1,9 +1,9 @@
+import { CreateEvent } from "./domains/Event/screens";
+
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <p>O pai tá on!</p>
-      </header>
+      <CreateEvent />
     </div>
   );
 }
