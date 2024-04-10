@@ -1,5 +1,5 @@
-export * from "./Checkbox/Checkbox";
-export * from "./Combobox/Combobox";
-export * from "./TextArea/TextArea";
-export * from "./Button/Button";
-export * from "./Input/Input";
+export { Checkbox } from "./Checkbox";
+export { Combobox } from "./Combobox";
+export { TextArea } from "./TextArea";
+export { Button } from "./Button";
+export { Input } from "./Input";

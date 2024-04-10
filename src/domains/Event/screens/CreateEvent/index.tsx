@@ -1,5 +1,5 @@
 import { EventForm } from "../../components";
 
-export const CreateEvent: React.FC = () => {
+export const CreateEvent = () => {
   return <EventForm />;
 };
