@@ -1,5 +1,5 @@
-export { Checkbox } from "./Checkbox";
-export { Combobox } from "./Combobox";
-export { TextArea } from "./TextArea";
-export { Button } from "./Button";
-export { Input } from "./Input";
+export { default as Checkbox } from "./Checkbox";
+export { default as Combobox } from "./Combobox";
+export { default as TextArea } from "./TextArea";
+export { default as Button } from "./Button";
+export { default as Input } from "./Input";

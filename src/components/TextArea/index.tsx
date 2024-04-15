@@ -1,3 +1,5 @@
-export const TextArea = () => {
+const TextArea = () => {
   return <div>TextArea</div>;
 };
+
+export default TextArea;

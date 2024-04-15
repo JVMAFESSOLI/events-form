@@ -1,5 +1,7 @@
 import { EventForm } from "../../components";
 
-export const CreateEvent = () => {
+const CreateEvent = () => {
   return <EventForm />;
 };
+
+export default CreateEvent;

@@ -1,9 +1,15 @@
-import { Button, Checkbox, Combobox, Input, TextArea } from "components";
+import {
+  Button,
+  Checkbox,
+  Combobox,
+  Input,
+  TextArea,
+} from "../../../../components";
 
-export const EventForm = () => {
+const EventForm = () => {
   return (
     <div>
-      <Input title="Título do evento" type="text" />
+      <Input title="Título do evento" type="text" label="mínimo 8 caracteres" />
       <Checkbox />
       <Combobox />
       <TextArea />
@@ -11,3 +17,5 @@ export const EventForm = () => {
     </div>
   );
 };
+
+export default EventForm;
