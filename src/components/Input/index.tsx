@@ -19,7 +19,7 @@ const Input: React.FC<InputProps> = ({ title, type, label }) => {
       </div>
       <input
         type={type}
-        className="border-2 border-solid border-fafafc rounded-lg p-2"
+        className="border-2 border-solid border-fafafc rounded-lg p-2 h-14 w-96"
       />
     </div>
   );

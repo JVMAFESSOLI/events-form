@@ -16,7 +16,22 @@ const EventForm = () => {
         label="Evento privado"
         onChange={console.log}
       />
-      <Combobox />
+      <Combobox
+        id="1"
+        label="Categoria"
+        placeholder="Tipo do evento"
+        onChange={console.log}
+        items={[
+          "bailão",
+          "piseiro",
+          "pisadinha",
+          "forro",
+          "gospel",
+          "bagaceira",
+          "aquele outro",
+          "um nome bem grandão",
+        ]}
+      />
       <Textarea label="Informações extras" />
       <Button id="1" title="Salvar evento" onClick={console.log} />
     </div>
