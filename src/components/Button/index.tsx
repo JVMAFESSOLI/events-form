@@ -1,16 +1,14 @@
 import { FC } from "react";
 
 type ButtonProps = {
-  id: string;
   title: string;
   disabled?: boolean;
   onClick: () => void;
 };
 
-const Button: FC<ButtonProps> = ({ id, onClick, disabled = false, title }) => {
+const Button: FC<ButtonProps> = ({ onClick, disabled = false, title }) => {
   return (
     <button
-      id={id}
       className="bg-green-600 w-96 h-14"
       onClick={onClick}
       disabled={disabled}

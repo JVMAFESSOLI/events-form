@@ -2,7 +2,6 @@ import { FC, useState } from "react";
 // import { ReactComponent as Arrow } from "../../assets/svg/arrow.svg";
 
 type ComboboxProps = {
-  id: string;
   label: string;
   value?: string;
   items: string[];
@@ -11,23 +10,19 @@ type ComboboxProps = {
 };
 
 const Combobox: FC<ComboboxProps> = ({
-  id,
   items,
   value,
   label,
   onChange,
   placeholder,
 }): JSX.Element => {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <div className="flex-row box-border">
-      <label className="text-4e4958 text-sm " htmlFor={id}>
-        {label}
-      </label>
+      <label className="text-4e4958 text-sm ">{label}</label>
       <div>
         <input
-          id={id}
           type="text"
           value={value}
           className="placeholder-gray-300 border-2 rounded-lg p-1 box-border h-14 w-96 "
