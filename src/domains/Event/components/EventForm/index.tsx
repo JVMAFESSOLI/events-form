@@ -1,3 +1,6 @@
+import { useForm } from "react-hook-form";
+import { EventPayload } from "./types";
+import { FC } from "react";
 import {
   Button,
   Checkbox,
@@ -6,27 +9,50 @@ import {
   Textarea,
 } from "../../../../components";
 
-const EventForm = () => {
+type EventFormProps = {
+  onSave: (data: EventPayload) => void;
+};
+
+const EventForm: FC<EventFormProps> = ({ onSave }) => {
+  const { register, handleSubmit } = useForm<EventPayload>({
+    mode: "onSubmit",
+  });
+
   return (
-    <div className="w-2/3 bg-white bound p-12">
+    <form onSubmit={handleSubmit(onSave)} className="w-2/3 bg-white bound p-12">
       <section>
         <h1 className="text-2xl font-semibold border-b-2 pb-2">
           Informações do Evento
         </h1>
         <Input
+          id="title"
           type="text"
           title="Titulo do evento"
           label="mínimo 8 caracteres"
+          {...register("title", { required: true })}
         />
-        <Input type="text" title="Link do evento" label="comece com https://" />
         <Input
+          id="url"
+          type="text"
+          title="Link do evento"
+          label="comece com https://"
+          {...register("url", { required: true })}
+        />
+        <Input
+          id="phone"
           type="text"
           label="somente números"
           title="Whatsapp para contato"
+          {...register("phone", { required: true })}
         />
-        <Textarea label="Informações extras" />
+        <Textarea
+          label="Informações extras"
+          {...register("note", { required: true })}
+        />
         <Combobox
+          key={"category"}
           label="Categoria"
+          // onChange={}
           items={[
             "Carnaval",
             "Festa junina",
@@ -36,40 +62,60 @@ const EventForm = () => {
             "Despedida de solteiro",
           ]}
           placeholder="Tipo do evento"
-          onChange={console.log}
+          {...register("category", { required: true })}
         />
       </section>
       <section>
         <h1 className="text-2xl font-semibold border-b-2 pb-2">Privacidade</h1>
         <Input
+          id="email"
           type="email"
           label="digite um email válido"
           title="E-mail do administrador"
+          {...register("email", { required: true })}
         />
         <Input
+          id="email"
           type="password"
           label="mínimo 8 caracteres"
           title="Senha de acesso para as participantes"
+          {...register("password", { required: true })}
         />
         <Checkbox
           checked={false}
           id="private-event"
           label="Evento privado"
-          onChange={console.log}
+          // onChange={console.log}
+          {...register("private", { required: true })}
         />
       </section>
       <section>
         <h1 className="text-2xl font-semibold border-b-2 pb-2">Dia e hora</h1>
-        <Input title="Data" type="date" />
+        <Input
+          id={"date"}
+          type="date"
+          title="Data"
+          {...register("date", { required: true })}
+        />
         <div>
-          <Input title="Das" type="time" />
-          <Input title="Até" type="time" />
+          <Input
+            title="Das"
+            type="time"
+            id="time-from"
+            {...register("initialTime", { required: true })}
+          />
+          <Input
+            title="Até"
+            type="time"
+            id={"time-to"}
+            {...register("finalTime", { required: true })}
+          />
         </div>
       </section>
       <footer>
-        <Button title="Salvar evento" onClick={console.log} />
+        <Button title="Salvar evento" onClick={console.log} type="submit" />
       </footer>
-    </div>
+    </form>
   );
 };
 

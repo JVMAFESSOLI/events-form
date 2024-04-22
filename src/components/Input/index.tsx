@@ -1,14 +1,15 @@
 import { HTMLInputTypeAttribute } from "react";
 
 type InputProps = {
+  id: string;
   title: string;
-  type: HTMLInputTypeAttribute;
   label?: string;
+  type: HTMLInputTypeAttribute;
 };
 
-const Input: React.FC<InputProps> = ({ title, type, label }) => {
+const Input: React.FC<InputProps> = ({ id, title, type, label }) => {
   return (
-    <div className="flex w-96 gap-1 flex-col">
+    <div id="id" className="flex w-96 gap-1 flex-col">
       <div className="flex items-center">
         <h2 className="text-4e4958 text-sm font-normal leading-6">{title}</h2>
         {label && (

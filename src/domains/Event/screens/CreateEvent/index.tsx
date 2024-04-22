@@ -10,7 +10,7 @@ const CreateEvent = () => {
         <p className="text-base text-blue-400 font-normal">
           O primeiro passo, é preencher esse <br /> formulário de inscrição.
         </p>
-        <EventForm />
+        <EventForm onSave={console.log} />
       </section>
     </div>
   );

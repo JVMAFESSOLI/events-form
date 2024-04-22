@@ -5,7 +5,7 @@ type CheckboxProps = {
   label: string;
   checked: boolean;
   disabled?: boolean;
-  onChange: () => void;
+  onChange?: () => void;
 };
 
 const Checkbox: FC<CheckboxProps> = ({
@@ -18,12 +18,12 @@ const Checkbox: FC<CheckboxProps> = ({
   return (
     <label className="flex gap-2 h-6">
       <input
-        type="checkbox"
-        id={`checkbox-${id}`}
         hidden
+        type="checkbox"
+        checked={checked}
         disabled={disabled}
         onChange={onChange}
-        checked={checked}
+        id={`checkbox-${id}`}
       />
       <div className="h-6 w-6 rounded-md border border-gray-300"></div>
       <p className="text-sm text-gray-900">{label}</p>

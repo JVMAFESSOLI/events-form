@@ -6,7 +6,7 @@ type ComboboxProps = {
   value?: string;
   items: string[];
   placeholder?: string;
-  onChange: (selected?: string) => void;
+  onChange?: (selected?: string) => void;
 };
 
 const Combobox: FC<ComboboxProps> = ({
@@ -25,12 +25,12 @@ const Combobox: FC<ComboboxProps> = ({
         <input
           type="text"
           value={value}
-          className="placeholder-gray-300 border-2 rounded-lg p-1 box-border h-14 w-96 "
           role="combobox"
           aria-expanded={isOpen}
           placeholder={placeholder}
-          onChange={(event) => onChange(event.target.value)}
           onClick={() => setIsOpen((prev) => !prev)}
+          onChange={(event) => onChange && onChange(event.target.value)}
+          className="placeholder-gray-300 border-2 rounded-lg p-1 box-border h-14 w-96 "
         />
         {/* <Arrow onClick={() => setIsOpen((prev) => !prev)} /> */}
       </div>
