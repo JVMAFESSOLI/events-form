@@ -2,8 +2,8 @@ import { EventForm } from "../../components";
 
 const CreateEvent = () => {
   return (
-    <div className="flex-row w-screen h-screen bg-gray-200">
-      <section className="h-64 bg-stone-900 flex-row items-center pt-12">
+    <div className="flex-row w-full h-screen bg-gray-300">
+      <section className="justify-center items-center h-64 bg-stone-900 pt-12">
         <h1 className="text-4xl text-white font-bold mb-4">
           Crie e compartilhe <br /> seu evento.
         </h1>

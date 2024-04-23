@@ -30,7 +30,7 @@ const Combobox: FC<ComboboxProps> = ({
           placeholder={placeholder}
           onClick={() => setIsOpen((prev) => !prev)}
           onChange={(event) => onChange && onChange(event.target.value)}
-          className="placeholder-gray-300 border-2 rounded-lg p-1 box-border h-14 w-96 "
+          className="placeholder-gray-300 border-2 rounded-lg p-1 box-border h-14 w-full "
         />
         {/* <Arrow onClick={() => setIsOpen((prev) => !prev)} /> */}
       </div>

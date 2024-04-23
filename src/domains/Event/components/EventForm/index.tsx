@@ -19,8 +19,11 @@ const EventForm: FC<EventFormProps> = ({ onSave }) => {
   });
 
   return (
-    <form onSubmit={handleSubmit(onSave)} className="w-2/3 bg-white bound p-12">
-      <section>
+    <form
+      onSubmit={handleSubmit(onSave)}
+      className="flex-row justify-center items-center w-5/12 bg-white bound p-12 rounded-md space-y-8"
+    >
+      <section className="space-y-6">
         <h1 className="text-2xl font-semibold border-b-2 pb-2">
           Informações do Evento
         </h1>
@@ -65,7 +68,7 @@ const EventForm: FC<EventFormProps> = ({ onSave }) => {
           {...register("category", { required: true })}
         />
       </section>
-      <section>
+      <section className="space-y-6">
         <h1 className="text-2xl font-semibold border-b-2 pb-2">Privacidade</h1>
         <Input
           id="email"
@@ -89,7 +92,7 @@ const EventForm: FC<EventFormProps> = ({ onSave }) => {
           {...register("private", { required: true })}
         />
       </section>
-      <section>
+      <section className="space-y-6">
         <h1 className="text-2xl font-semibold border-b-2 pb-2">Dia e hora</h1>
         <Input
           id={"date"}
@@ -112,7 +115,7 @@ const EventForm: FC<EventFormProps> = ({ onSave }) => {
           />
         </div>
       </section>
-      <footer>
+      <footer className="bg-gray-100 h-24 flex items-center justify-center rounded-b-md">
         <Button title="Salvar evento" onClick={console.log} type="submit" />
       </footer>
     </form>

@@ -18,7 +18,7 @@ const Button: FC<ButtonProps> = ({
       type={type}
       onClick={onClick}
       disabled={disabled}
-      className="bg-green-600 w-96 h-14"
+      className="bg-green-600 w-11/12 h-12 rounded-md"
     >
       <span className="text-white text-base leading-7 font-semibold">
         {title}

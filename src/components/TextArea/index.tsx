@@ -9,7 +9,7 @@ const Textarea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
     <div className="flex flex-col">
       <span className="text-4e4958 text-sm font-normal leading-6">{label}</span>
       <textarea
-        className="border-2 border-solid border-fafafc text-sm rounded-lg p-2 w-96 h-40 resize-none"
+        className="border-2 border-solid border-fafafc text-sm rounded-lg p-2 h-40 resize-none"
         {...props}
         ref={ref}
       />
