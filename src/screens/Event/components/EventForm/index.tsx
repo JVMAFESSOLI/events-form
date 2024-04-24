@@ -21,7 +21,7 @@ const EventForm: FC<EventFormProps> = ({ onSave }) => {
   return (
     <form
       onSubmit={handleSubmit(onSave)}
-      className="flex-row justify-center items-center w-5/12 bg-white bound p-12 rounded-md space-y-8"
+      className="flex-row justify-center items-center mx-auto w-6/12 bg-white bound p-12 rounded-md space-y-8"
     >
       <section className="space-y-6">
         <h1 className="text-2xl font-semibold border-b-2 pb-2">

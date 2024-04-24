@@ -1,4 +1,4 @@
-import { CreateEvent } from "./domains/Event/screens";
+import { CreateEvent } from "./screens/Event/screens";
 
 function App() {
   return (
