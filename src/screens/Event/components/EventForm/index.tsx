@@ -5,6 +5,7 @@ import {
   Button,
   Checkbox,
   Combobox,
+  FormItem,
   Input,
   Textarea,
 } from "../../../../components";
@@ -27,31 +28,18 @@ const EventForm: FC<EventFormProps> = ({ onSave }) => {
         <h1 className="text-2xl font-semibold border-b-2 pb-2">
           Informações do Evento
         </h1>
-        <Input
-          id="title"
-          type="text"
-          title="Titulo do evento"
-          label="mínimo 8 caracteres"
-          {...register("title", { required: true })}
-        />
-        <Input
-          id="url"
-          type="text"
-          title="Link do evento"
-          label="comece com https://"
-          {...register("url", { required: true })}
-        />
-        <Input
-          id="phone"
-          type="text"
-          label="somente números"
-          title="Whatsapp para contato"
-          {...register("phone", { required: true })}
-        />
-        <Textarea
-          label="Informações extras"
-          {...register("note", { required: true })}
-        />
+        <FormItem message="mínimo 8 caracteres" label="Titulo do evento">
+          <Input {...register("title")} />
+        </FormItem>
+        <FormItem message="comece com https://" label="Link do evento">
+          <Input {...register("url")} />
+        </FormItem>
+        <FormItem message="somente números" label="Whatsapp para contato">
+          <Input {...register("phone")} />
+        </FormItem>
+        <FormItem label="Informações extras">
+          <Textarea label="Informações extras" {...register("note")} />
+        </FormItem>
         <Combobox
           key={"category"}
           label="Categoria"
@@ -70,20 +58,18 @@ const EventForm: FC<EventFormProps> = ({ onSave }) => {
       </section>
       <section className="space-y-6">
         <h1 className="text-2xl font-semibold border-b-2 pb-2">Privacidade</h1>
-        <Input
-          id="email"
-          type="email"
-          label="digite um email válido"
-          title="E-mail do administrador"
-          {...register("email", { required: true })}
-        />
-        <Input
-          id="email"
-          type="password"
-          label="mínimo 8 caracteres"
-          title="Senha de acesso para as participantes"
-          {...register("password", { required: true })}
-        />
+        <FormItem
+          label="E-mail do administrador"
+          message="digite um email válido"
+        >
+          <Input {...register("email")} />
+        </FormItem>
+        <FormItem
+          label="Senha de acesso para as participantes"
+          message="mínimo 8 caracteres"
+        >
+          <Input {...register("password")} />
+        </FormItem>
         <Checkbox
           checked={false}
           id="private-event"
@@ -94,12 +80,9 @@ const EventForm: FC<EventFormProps> = ({ onSave }) => {
       </section>
       <section className="space-y-6">
         <h1 className="text-2xl font-semibold border-b-2 pb-2">Dia e hora</h1>
-        <Input
-          id={"date"}
-          type="date"
-          title="Data"
-          {...register("date", { required: true })}
-        />
+        <FormItem label="Data">
+          <Input {...register("date")} />
+        </FormItem>
         <div>
           <Input
             title="Das"
