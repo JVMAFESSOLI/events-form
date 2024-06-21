@@ -1291,6 +1291,10 @@
   dependencies:
     "@hapi/hoek" "^9.0.0"
 
+"@hookform/resolvers@^3.6.0":
+  version "3.6.0"
+  resolved "https://registry.yarnpkg.com/@hookform/resolvers/-/resolvers-3.6.0.tgz#71ae08acf7f7624fb24ea0505de00b9001a63687"
+
 "@humanwhocodes/config-array@^0.11.14":
   version "0.11.14"
   resolved "https://registry.yarnpkg.com/@humanwhocodes/config-array/-/config-array-0.11.14.tgz#d78e481a039f7566ecc9660b4ea7fe6b1fec442b"
@@ -1968,6 +1972,10 @@
   resolved "https://registry.yarnpkg.com/@types/graceful-fs/-/graceful-fs-4.1.9.tgz#2a06bc0f68a20ab37b3e36aa238be6abdf49e8b4"
   dependencies:
     "@types/node" "*"
+
+"@types/hapi__joi@^17.1.14":
+  version "17.1.14"
+  resolved "https://registry.yarnpkg.com/@types/hapi__joi/-/hapi__joi-17.1.14.tgz#937843b8a5d49fbfa8a87cc3527f6575e2140ca8"
 
 "@types/html-minifier-terser@^6.0.0":
   version "6.1.0"

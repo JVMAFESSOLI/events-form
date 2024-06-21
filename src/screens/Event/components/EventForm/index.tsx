@@ -9,6 +9,8 @@ import {
   Input,
   Textarea,
 } from "../../../../components";
+import { joiResolver } from "@hookform/resolvers/joi";
+import { eventFormSchema } from "../../schema";
 
 type EventFormProps = {
   onSave: (data: EventPayload) => void;
@@ -17,6 +19,7 @@ type EventFormProps = {
 const EventForm: FC<EventFormProps> = ({ onSave }) => {
   const { register, handleSubmit } = useForm<EventPayload>({
     mode: "onSubmit",
+    resolver: joiResolver(eventFormSchema),
   });
 
   return (
@@ -29,7 +32,7 @@ const EventForm: FC<EventFormProps> = ({ onSave }) => {
           Informações do Evento
         </h1>
         <FormItem message="mínimo 8 caracteres" label="Titulo do evento">
-          <Input {...register("title")} />
+          <Input {...register("title")} min={8} />
         </FormItem>
         <FormItem message="comece com https://" label="Link do evento">
           <Input {...register("url")} />
