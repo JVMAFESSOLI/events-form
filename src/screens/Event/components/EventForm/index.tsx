@@ -38,7 +38,7 @@ const EventForm: FC<EventFormProps> = ({ onSave }) => {
           <Input {...register("phone")} />
         </FormItem>
         <FormItem label="Informações extras">
-          <Textarea label="Informações extras" {...register("note")} />
+          <Textarea {...register("note")} />
         </FormItem>
         <Combobox
           key={"category"}
