@@ -1,7 +1,8 @@
+import { eventFormSchema } from "@/screens/Event/schema";
 import { joiResolver } from "@hookform/resolvers/joi";
-import { eventFormSchema } from "../../schema";
+import { EventPayload } from "@/models/ModelEvent";
 import { useForm } from "react-hook-form";
-import { EventPayload } from "./types";
+import { maskedPhone } from "../utils";
 import { FC } from "react";
 import {
   Button,
@@ -10,8 +11,7 @@ import {
   FormItem,
   Input,
   Textarea,
-} from "../../../../components";
-import { maskedPhone } from "../utils";
+} from "@/components";
 
 type EventFormProps = {
   onSave: (data: EventPayload) => void;
