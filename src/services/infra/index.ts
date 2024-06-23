@@ -1,21 +1,11 @@
-import axios, { AxiosResponse, HttpStatusCode, Method } from "axios";
+import axios, { AxiosResponse } from "axios";
+import {
+  HttpClient,
+  HttpRequest,
+  HttpResponse,
+} from "@/services/protocols/http";
 
-type HttpRequest = {
-  url: string;
-  method: Method;
-  body?: any;
-};
-
-export type HttpResponse<T = any> = {
-  statusCode: HttpStatusCode;
-  data?: T;
-};
-
-type HttpClient<R = any> = {
-  request: (data: HttpRequest) => Promise<HttpResponse<R>>;
-};
-
-const HttpClient = (): HttpClient => {
+export const AxiosHttpClient = (): HttpClient => {
   const axiosInstance = axios.create();
 
   const request = async (data: HttpRequest): Promise<HttpResponse> => {
@@ -31,9 +21,12 @@ const HttpClient = (): HttpClient => {
       axiosResponse = error.response;
     }
 
+    axiosResponse.status === 401;
+
     return {
       statusCode: axiosResponse.status,
       data: axiosResponse.data,
     };
   };
+  return { request };
 };

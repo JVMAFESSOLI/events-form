@@ -1,3 +1,3 @@
 export const endpoints = {
-  teste: "teste/:id",
+  createEvent: "/createEvent",
 };
