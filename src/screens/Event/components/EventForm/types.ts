@@ -3,7 +3,7 @@ export type EventPayload = {
   date: number;
   note: string;
   title: string;
-  phone: number;
+  phone: string;
   email: string;
   category: string;
   password: string;

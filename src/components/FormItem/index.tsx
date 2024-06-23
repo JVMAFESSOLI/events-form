@@ -12,7 +12,7 @@ const FormItem = forwardRef<HTMLDivElement, FormItemProps>(
         <label className="text-4e4958 text-sm font-normal leading-6">
           {label}
         </label>
-        <span className="text-c1bccc text-xs font-normal leading-5 ml-2">
+        <span className="text-red-400 text-xs font-normal leading-5 ml-2">
           {message}
         </span>
       </div>
