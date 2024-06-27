@@ -2,9 +2,9 @@ import { EventPayload } from "@/models/ModelEvent";
 import Joi from "@hapi/joi";
 
 const eventFormSchema = Joi.object<EventPayload>({
-  date: Joi.string().required(),
-  category: Joi.string().required(),
+  date: Joi.string().optional(),
   private: Joi.boolean().required(),
+  category: Joi.string().optional(),
   finalTime: Joi.number().required(),
   initialTime: Joi.number().required(),
   note: Joi.string().max(2000).optional(),

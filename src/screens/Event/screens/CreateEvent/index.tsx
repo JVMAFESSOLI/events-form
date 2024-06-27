@@ -1,6 +1,18 @@
+import { eventFormSchema } from "@/screens/Event/schema";
+import { FormProvider, useForm } from "react-hook-form";
 import { EventForm } from "@/screens/Event/components";
+import { joiResolver } from "@hookform/resolvers/joi";
+import { EventPayload } from "@/models/ModelEvent";
+import { useCreateEvent } from "@/services/hooks";
 
 const CreateEvent = () => {
+  const form = useForm<EventPayload>({
+    mode: "onChange",
+    resolver: joiResolver(eventFormSchema),
+  });
+
+  const { mutate: mutateCreateEvent } = useCreateEvent();
+
   return (
     <div className="bg-gray-300 pb-24">
       <section className="flex-row items-center h-64 bg-stone-900 p-12">
@@ -14,7 +26,9 @@ const CreateEvent = () => {
         </div>
       </section>
       <div className="-mt-12">
-        <EventForm onSave={console.log} />
+        <FormProvider {...form}>
+          <EventForm onSave={mutateCreateEvent} />
+        </FormProvider>
       </div>
     </div>
   );

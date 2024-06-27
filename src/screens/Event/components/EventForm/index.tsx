@@ -1,20 +1,10 @@
-import { eventFormSchema } from "@/screens/Event/schema";
-import { joiResolver } from "@hookform/resolvers/joi";
-import { EventPayload } from "@/models/ModelEvent";
-import { useForm } from "react-hook-form";
+import { Button, Combobox, FormItem, Input, Textarea } from "@/components";
+import { useFormContext } from "react-hook-form";
 import { maskedPhone } from "../utils";
 import { FC } from "react";
-import {
-  Button,
-  Checkbox,
-  Combobox,
-  FormItem,
-  Input,
-  Textarea,
-} from "@/components";
 
 type EventFormProps = {
-  onSave: (data: EventPayload) => void;
+  onSave: () => void;
 };
 
 const EventForm: FC<EventFormProps> = ({ onSave }) => {
@@ -24,10 +14,7 @@ const EventForm: FC<EventFormProps> = ({ onSave }) => {
     setValue,
     handleSubmit,
     formState: { isValid, errors },
-  } = useForm<EventPayload>({
-    mode: "onChange",
-    resolver: joiResolver(eventFormSchema),
-  });
+  } = useFormContext();
 
   return (
     <form
@@ -60,7 +47,7 @@ const EventForm: FC<EventFormProps> = ({ onSave }) => {
         <FormItem label="Informações extras">
           <Textarea {...register("note")} />
         </FormItem>
-        <Combobox
+        {/* <Combobox
           key={"category"}
           label="Categoria"
           // onChange={}
@@ -74,7 +61,7 @@ const EventForm: FC<EventFormProps> = ({ onSave }) => {
           ]}
           {...register("category")}
           placeholder="Tipo do evento"
-        />
+        /> */}
       </section>
       <section className="space-y-6">
         <h1 className="text-2xl font-semibold border-b-2 pb-2">Privacidade</h1>
@@ -136,12 +123,7 @@ const EventForm: FC<EventFormProps> = ({ onSave }) => {
         </FormItem>
       </section>
       <footer className="bg-gray-100 h-24 flex items-center justify-center rounded-b-md">
-        <Button
-          type="submit"
-          disabled={!isValid}
-          onClick={console.log}
-          title="Salvar evento"
-        />
+        <Button type="submit" disabled={isValid} title="Salvar evento" />
       </footer>
     </form>
   );

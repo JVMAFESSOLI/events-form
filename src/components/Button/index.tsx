@@ -3,7 +3,7 @@ import { FC } from "react";
 type ButtonProps = {
   title: string;
   disabled?: boolean;
-  onClick: () => void;
+  onClick?: () => void;
   type: "submit" | "reset" | "button";
 };
 
