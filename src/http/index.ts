@@ -1,4 +1,4 @@
-import { HttpResponse } from "../protocols/http";
+import { HttpResponse } from "../data/http";
 
 import { AxiosHttpClient } from "../infra";
 

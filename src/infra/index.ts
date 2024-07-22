@@ -1,9 +1,5 @@
 import axios, { AxiosResponse } from "axios";
-import {
-  HttpClient,
-  HttpRequest,
-  HttpResponse,
-} from "@/services/protocols/http";
+import { HttpClient, HttpRequest, HttpResponse } from "@/data/http";
 
 export const AxiosHttpClient = (): HttpClient => {
   const axiosInstance = axios.create();
@@ -20,8 +16,6 @@ export const AxiosHttpClient = (): HttpClient => {
     } catch (error) {
       axiosResponse = error.response;
     }
-
-    axiosResponse.status === 401;
 
     return {
       statusCode: axiosResponse.status,

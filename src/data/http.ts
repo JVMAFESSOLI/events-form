@@ -1,6 +1,6 @@
 import { HttpStatusCode, Method } from "axios";
 
-export type HttpResponse<T = any> = {
+export type HttpResponse<T = unknown> = {
   statusCode: HttpStatusCode;
   data?: T;
 };
@@ -8,9 +8,9 @@ export type HttpResponse<T = any> = {
 export type HttpRequest = {
   url: string;
   method: Method;
-  body?: any;
+  body?: unknown;
 };
 
-export interface HttpClient<R = any> {
+export interface HttpClient<R = unknown> {
   request: (data: HttpRequest) => Promise<HttpResponse<R>>;
 }

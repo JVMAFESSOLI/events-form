@@ -41,7 +41,9 @@ const EventForm: FC<EventFormProps> = ({ onSave }) => {
             {...register("phone")}
             value={watch("phone")}
             placeholder="somente números"
-            onChange={(e) => setValue("phone", maskedPhone(e.target.value))}
+            onChange={(event) =>
+              setValue("phone", maskedPhone(event.target.value))
+            }
           />
         </FormItem>
         <FormItem label="Informações extras">
@@ -104,22 +106,10 @@ const EventForm: FC<EventFormProps> = ({ onSave }) => {
         </FormItem>
 
         <FormItem label="Das">
-          <Input
-            title="Das"
-            type="time"
-            id="time-from"
-            placeholder="19:00"
-            {...register("initialTime")}
-          />
+          <Input type="time" placeholder="19:00" {...register("initialTime")} />
         </FormItem>
         <FormItem label="até">
-          <Input
-            title="Até"
-            type="time"
-            id={"time-to"}
-            placeholder="20:00"
-            {...register("finalTime")}
-          />
+          <Input type="time" placeholder="20:00" {...register("finalTime")} />
         </FormItem>
       </section>
       <footer className="bg-gray-100 h-24 flex items-center justify-center rounded-b-md">

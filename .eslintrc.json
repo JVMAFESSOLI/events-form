@@ -1,5 +1,7 @@
 {
   "extends": [
+    "react-app",
+    "react-app/jest",
     "next/core-web-vitals",
     "@rocketseat/eslint-config/react"
   ]

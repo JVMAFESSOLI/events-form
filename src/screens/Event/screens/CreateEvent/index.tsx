@@ -1,9 +1,9 @@
-import { eventFormSchema } from "@/screens/Event/schema";
+import { eventFormSchema } from "@/screens/Event/screens/CreateEvent/schema";
 import { FormProvider, useForm } from "react-hook-form";
 import { EventForm } from "@/screens/Event/components";
 import { joiResolver } from "@hookform/resolvers/joi";
 import { EventPayload } from "@/models/ModelEvent";
-import { useCreateEvent } from "@/services/hooks";
+import { useCreateEvent } from "@/screens/Event/services";
 
 const CreateEvent = () => {
   const form = useForm<EventPayload>({
